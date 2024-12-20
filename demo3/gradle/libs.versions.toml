@@ -5,7 +5,7 @@ hamkrest = "1.8.0.1"
 kotlin = "2.1.0"
 kotlinReflect = "2.1.0"
 lombok = "1.18.36"
-springboot = "3.4.0"
+springboot = "3.4.1"
 springDependencyManagementVersion = "1.1.7"
 
 [libraries]
