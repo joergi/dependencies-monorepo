@@ -20,7 +20,7 @@ jobs:
         with:
           filters: |
             src:
-            - demo1/**
+            - demo3/**
             - build.gradle.kts
             - settings.gradle.kts
             - gradle/**
