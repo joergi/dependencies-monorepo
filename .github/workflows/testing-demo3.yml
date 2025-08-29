@@ -10,9 +10,26 @@ on:
   workflow_dispatch: {}
 
 jobs:
+  check-if-test-should-run:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.watched_paths.outputs.src }}
+    steps:
+      - id: watched_paths
+        uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
+        with:
+          filters: |
+            src:
+            - demo3/**
+            - build.gradle.kts
+            - settings.gradle.kts
+            - gradle/**
+      - name: write build should run in env
+        run: |
+          echo ${{ steps.watched_paths.outputs.src }}
   test-demo-3:
-    if: |
-      !contains(github.event.pull_request.labels.*.name, 'automatic-merge')
+    needs: check-if-test-should-run
+    if: ${{ needs.check-if-test-should-run.outputs.should_run == 'true' }}
     runs-on: ubuntu-latest
     defaults:
       run:
