@@ -2,11 +2,7 @@ name: Test Demo 1
 
 on:
   pull_request:
-    paths:
-      - 'demo1/**'
-      - '.github/**'
     branches: [ main ]
-
   workflow_dispatch: {}
 
 jobs:
