@@ -2,15 +2,11 @@ name: Test Demo 1
 
 on:
   pull_request:
-    paths:
-      - 'demo1/**'
-      - '.github/**'
     branches: [ main ]
-
   workflow_dispatch: {}
 
 jobs:
-  check-if-test-should-run:
+  check-if-test1-should-run:
     runs-on: ubuntu-latest
     outputs:
       should_run: ${{ steps.watched_paths.outputs.src }}
@@ -28,8 +24,8 @@ jobs:
         run: |
           echo ${{ steps.watched_paths.outputs.src }}
   test-demo-1:
-    needs: check-if-test-should-run
-    if: ${{ needs.check-if-test-should-run.outputs.should_run == 'true' }}
+    needs: check-if-test1-should-run
+    if: ${{ needs.check-if-test1-should-run.outputs.should_run == 'true' }}
     runs-on: ubuntu-latest
     defaults:
       run:
