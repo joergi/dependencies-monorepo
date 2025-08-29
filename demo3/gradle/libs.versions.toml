@@ -2,7 +2,7 @@
 jacksonKotlin = "2.20.0"
 junit-jupiter = "5.10.1"
 hamkrest = "1.8.0.1"
-kotlin = "2.1.21"
+kotlin = "2.2.10"
 kotlinReflect = "2.2.10"
 lombok = "1.18.38"
 springboot = "3.5.5"
