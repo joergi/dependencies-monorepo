@@ -4,7 +4,7 @@ junit-jupiter = "5.10.1"
 hamkrest = "1.8.0.1"
 kotlin = "2.4.10"
 kotlinReflect = "2.4.10"
-lombok = "1.18.46"
+lombok = "1.18.48"
 springboot = "4.1.1"
 springDependencyManagementVersion = "1.1.7"
 
